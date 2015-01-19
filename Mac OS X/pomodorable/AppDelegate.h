@@ -83,6 +83,9 @@
 @property (nonatomic, strong) AVAudioPlayer *pomodoroCompleteSound;
 @property (nonatomic, strong) AVAudioPlayer *breakCompleteSound;
 
+@property (nonatomic, strong) AVAudioPlayer *clockSound;
+@property (nonatomic, strong) AVAudioPlayer *gongSound;
+
 - (StatusItemView *)statusItemView;
 - (void)openPreferences;
 - (void)setDefaults;

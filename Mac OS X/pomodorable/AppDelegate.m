@@ -532,7 +532,7 @@ void *kContextActivePanel = &kContextActivePanel;
     int diff = pomo.timeEstimated - pomo.timeElapsed;
     int minutesLeft = diff / 60;
     int secondsleft = diff % 60;
-    
+
     if(pomo.type == TimerTypeEgg)
     {
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"playTickSound"] && ![self.tickSound isPlaying] && pomo.status != TimerStatusPaused)
@@ -543,10 +543,17 @@ void *kContextActivePanel = &kContextActivePanel;
         {
             [self.tickSound stop];
         }
-        
-//        float percentComplete = ((float)pomo.timeElapsed / (float)pomo.timeEstimated) / 2;
-////        if(robotOnline)
-////            [RKRGBLEDOutputCommand sendCommandWithRed:0.5 green:0.5-percentComplete blue:0.0];
+        else if ([[NSUserDefaults standardUserDefaults] boolForKey:kPlayAttentionCheckSound])
+        {
+            if (secondsleft == 0 && (minutesLeft == 20 || minutesLeft == 10))
+            {
+                [self.clockSound play];
+            }
+            else if (secondsleft == 0 && (minutesLeft == 15 || minutesLeft == 5))
+            {
+                [self.gongSound play];
+            }
+        }
     }
     
     NSString *stringFormat = @"%02d:%02d";
@@ -726,6 +733,8 @@ void *kContextActivePanel = &kContextActivePanel;
     [self.breakCompleteSound setVolume:f];
     [self.tickSound setVolume:f];
     [self.pomodoroCompleteSound setVolume:f];
+    [self.clockSound setVolume:f];
+    [self.tickSound setVolume:f];
 }
 
 - (void)soundDidChange:(NSNotification *)note
@@ -844,6 +853,9 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)setupSounds
 {
+    self.clockSound = [AVAudioPlayer soundForFilename:@"clock.m4a"];
+    self.gongSound = [AVAudioPlayer soundForFilename:@"gong.m4a"];
+    
     self.tickSound = [AVAudioPlayer soundForPreferenceKey:@"tickAudioPath"];
     self.tickSound.numberOfLoops = 1e100;
     

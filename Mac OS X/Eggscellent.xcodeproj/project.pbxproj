@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		345E461A1A6DBE6A001F1454 /* clock.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 345E46181A6DBE6A001F1454 /* clock.m4a */; };
+		345E461B1A6DBE6A001F1454 /* gong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 345E46191A6DBE6A001F1454 /* gong.m4a */; };
 		3D0FDCE916ECED5800815B2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B401465F38500BFD7B2 /* main.m */; };
 		3D0FDCEA16ECED5800815B2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B471465F38500BFD7B2 /* AppDelegate.m */; };
 		3D0FDCEB16ECED5800815B2C /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B931466F68400BFD7B2 /* PanelController.m */; };
@@ -592,6 +594,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		345E46181A6DBE6A001F1454 /* clock.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = clock.m4a; sourceTree = "<group>"; };
+		345E46191A6DBE6A001F1454 /* gong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gong.m4a; sourceTree = "<group>"; };
 		3D0FDDE316ECED5800815B2C /* Eggscellent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eggscellent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1564E115697BC100D70EBB /* ThingsSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingsSyncController.h; sourceTree = "<group>"; };
 		3D1564E215697BC100D70EBB /* ThingsSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingsSyncController.m; sourceTree = "<group>"; };
@@ -1018,6 +1022,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		345E46171A6DBE6A001F1454 /* attention */ = {
+			isa = PBXGroup;
+			children = (
+				345E46181A6DBE6A001F1454 /* clock.m4a */,
+				345E46191A6DBE6A001F1454 /* gong.m4a */,
+			);
+			name = attention;
+			path = Resources/Audio/attention;
+			sourceTree = "<group>";
+		};
 		3D1564E515697BCF00D70EBB /* Things */ = {
 			isa = PBXGroup;
 			children = (
@@ -1247,6 +1261,7 @@
 		F4104BBC147C147B0077D272 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				345E46171A6DBE6A001F1454 /* attention */,
 				3D47206016D9963E009204E2 /* egg */,
 				F45A4BD0152EAE910010AB45 /* Audio.plist */,
 				F45A4BD3152F70BA0010AB45 /* completions */,
@@ -2265,6 +2280,7 @@
 				F43937F614AA8EEA00FA1244 /* footer.png in Resources */,
 				F43937F914AA8F7C00FA1244 /* button-add-down.png in Resources */,
 				F43937FA14AA8F7C00FA1244 /* button-add.png in Resources */,
+				345E461A1A6DBE6A001F1454 /* clock.m4a in Resources */,
 				F43937FD14AA909300FA1244 /* prefs-down.png in Resources */,
 				F43937FE14AA909300FA1244 /* prefs.png in Resources */,
 				F439380114AA913500FA1244 /* button-stop-down.png in Resources */,
@@ -2385,6 +2401,7 @@
 				3DE68BCA16F2203200500E40 /* list.png in Resources */,
 				3DF3DCAA1705492300F865E9 /* stats.png in Resources */,
 				3DF3DCAC1705492300F865E9 /* stats@2x.png in Resources */,
+				345E461B1A6DBE6A001F1454 /* gong.m4a in Resources */,
 				3D53FD27171A5E0000303BD4 /* button-next-down.png in Resources */,
 				3D53FD29171A5E0000303BD4 /* button-next-down@2x.png in Resources */,
 				3D53FD2B171A5E0000303BD4 /* button-next.png in Resources */,
