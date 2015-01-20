@@ -235,7 +235,6 @@
 		3D0FDDCF16ECED5800815B2C /* egg_count-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4116D408C200287DA8 /* egg_count-7@2x.png */; };
 		3D0FDDD016ECED5800815B2C /* egg_count-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4216D408C200287DA8 /* egg_count-8.png */; };
 		3D0FDDD116ECED5800815B2C /* egg_count-8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4316D408C200287DA8 /* egg_count-8@2x.png */; };
-		3D0FDDD216ECED5800815B2C /* egg_sequences in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4716D67858004604B6 /* egg_sequences */; };
 		3D0FDDD316ECED5800815B2C /* ribbonComplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */; };
 		3D0FDDD416ECED5800815B2C /* ribbonComplete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */; };
 		3D0FDDD516ECED5800815B2C /* 2_egg_wind.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206116D99651009204E2 /* 2_egg_wind.aif */; };
@@ -291,7 +290,6 @@
 		3D969680171891CE00A0CE95 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */; };
 		3D969681171891DE00A0CE95 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967D171891CD00A0CE95 /* IOBluetooth.framework */; };
 		3D969682171891DE00A0CE95 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */; };
-		3D9CAB4816D67858004604B6 /* egg_sequences in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4716D67858004604B6 /* egg_sequences */; };
 		3D9CAB4A16D6B5E0004604B6 /* ribbonComplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */; };
 		3D9CAB4C16D6B5E7004604B6 /* ribbonComplete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */; };
 		3DAA1E4416D408C200287DA8 /* egg_count-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E3416D408C100287DA8 /* egg_count-1.png */; };
@@ -640,7 +638,6 @@
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3D96967D171891CD00A0CE95 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = SDKROOT; };
-		3D9CAB4716D67858004604B6 /* egg_sequences */ = {isa = PBXFileReference; lastKnownFileType = folder; name = egg_sequences; path = Resources/egg_sequences; sourceTree = "<group>"; };
 		3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbonComplete.png; sourceTree = "<group>"; };
 		3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbonComplete@2x.png"; path = "Resources/ribbons/ribbonComplete@2x.png"; sourceTree = "<group>"; };
 		3DAA1E3416D408C100287DA8 /* egg_count-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_count-1.png"; sourceTree = "<group>"; };
@@ -1584,7 +1581,6 @@
 		F48A5B3B1465F38500BFD7B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3D9CAB4716D67858004604B6 /* egg_sequences */,
 				3D8EA55315D5A7E100A07915 /* Fonts */,
 				F4E7E7F4147CCB7F00815B66 /* AppleScripts */,
 				F4104BBC147C147B0077D272 /* Audio */,
@@ -2197,7 +2193,6 @@
 				3D0FDDCF16ECED5800815B2C /* egg_count-7@2x.png in Resources */,
 				3D0FDDD016ECED5800815B2C /* egg_count-8.png in Resources */,
 				3D0FDDD116ECED5800815B2C /* egg_count-8@2x.png in Resources */,
-				3D0FDDD216ECED5800815B2C /* egg_sequences in Resources */,
 				3D0FDDD316ECED5800815B2C /* ribbonComplete.png in Resources */,
 				3D0FDDD416ECED5800815B2C /* ribbonComplete@2x.png in Resources */,
 				3D0FDDD516ECED5800815B2C /* 2_egg_wind.aif in Resources */,
@@ -2388,7 +2383,6 @@
 				3DAA1E5116D408C200287DA8 /* egg_count-7@2x.png in Resources */,
 				3DAA1E5216D408C200287DA8 /* egg_count-8.png in Resources */,
 				3DAA1E5316D408C200287DA8 /* egg_count-8@2x.png in Resources */,
-				3D9CAB4816D67858004604B6 /* egg_sequences in Resources */,
 				3D9CAB4A16D6B5E0004604B6 /* ribbonComplete.png in Resources */,
 				3D9CAB4C16D6B5E7004604B6 /* ribbonComplete@2x.png in Resources */,
 				3D47206616D99651009204E2 /* 2_egg_wind.aif in Resources */,

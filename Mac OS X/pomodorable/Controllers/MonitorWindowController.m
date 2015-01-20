@@ -101,10 +101,6 @@
     resumeString = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"Resume",@"Resume") attributes:txtDict];
     [stopButton setAttributedTitle:stopString];
     
-    //set animation delegate
-    animationView.delegate = self;
-    
-    
     //set up hatching sounds
     //hatchsound1
     NSString *lul = [[NSBundle mainBundle] pathForResource:@"4_egg_nudge_1" ofType:@"aif"];
@@ -213,102 +209,6 @@
     plannedPomodoroCount.stringValue = [[Activity currentActivity].plannedCount stringValue];
 }
 
-- (void)createQuarterForSequence:(NSString *)sequence;
-{
-    NSMutableArray *arr = [NSMutableArray array];
-    [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:sequence]];
-    
-    [animationView stop];
-    double countedFrames = (double)[arr count];
-    double quartSecondsEstimated = (_timeEstimated / 168) * countedFrames;//25 minutes is 1500 seconds
-    double frameRate = countedFrames / quartSecondsEstimated;
-    
-    animationView.frameRate = frameRate;
-    animationView.frames = arr;
-}
-
-#pragma mark - NSAnimationView Delegate Methods
-
-- (void)animationEnded
-{
-    switch(animationView.animationTag)
-    {
-        case 1000:
-        {
-            animationView.frameRate = 30;
-            NSMutableArray *arr = [NSMutableArray arrayWithCapacity:30];
-            [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/2_egg_wind"]];
-            animationView.frames = arr;
-            
-            AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
-            
-            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
-                [appDelegate.windUpSound performSelectorInBackground:@selector(play) withObject:nil];
-            
-            animationView.animationTag = -1;
-            [animationView start];
-        }
-            break;
-        case 1001:
-        {
-            //play first hatch
-            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
-                [hatchSound1 performSelectorInBackground:@selector(play) withObject:nil];
-            animationView.frameRate = 30;
-            NSMutableArray *arr = [NSMutableArray array];
-            [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/4_egg_nudge_1"]];
-            animationView.frames = arr;
-            animationView.animationTag = 2001;
-            [animationView start];
-        }
-            break;
-        case 2001:
-            //create second quarter
-            [self createQuarterForSequence:@"egg_sequences/5_egg_tick_Q2"];
-            animationView.animationTag = 1002;
-            [animationView start];
-            break;
-        case 1002:
-        {
-            //play second hatch
-            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
-                [hatchSound2 performSelectorInBackground:@selector(play) withObject:nil];
-            animationView.frameRate = 30;
-            NSMutableArray *arr = [NSMutableArray array];
-            [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/6_egg_nudge_2"]];
-            animationView.frames = arr;
-            animationView.animationTag = 2002;
-            [animationView start];
-        }
-            break;
-        case 2002:
-            //create third quarter
-            [self createQuarterForSequence:@"egg_sequences/7_egg_tick_Q3"];
-            animationView.animationTag = 1003;
-            [animationView start];
-            break;
-        case 1003:
-        {
-            //play third hatch
-            if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
-                [hatchSound3 performSelectorInBackground:@selector(play) withObject:nil];
-            animationView.frameRate = 30;
-            NSMutableArray *arr = [NSMutableArray array];
-            [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/8_egg_nudge_3"]];
-            animationView.frames = arr;
-            animationView.animationTag = 2003;
-            [animationView start];
-        }
-            break;
-        case 2003:
-            //create fourth quarter
-            [self createQuarterForSequence:@"egg_sequences/9_egg_tick_Q4"];
-            animationView.animationTag = 1004;
-            [animationView start];
-            break;
-    }
-}
-
 #pragma mark - Notification Methods
 
 - (void)PomodoroRequested:(NSNotification *)note
@@ -359,28 +259,15 @@
     externalInterruptionLabel.stringValue = [[[Activity currentActivity] externalInterruptionCount] stringValue];
 
     [containerView.layer removeAllAnimations];
-    
-    [animationView stop];
-    animationView.frameRate = 30;
-    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:168];
-    [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/1_egg_in"]];
-    animationView.frames = arr;
-    animationView.animationTag = 1000;
-    [animationView start];
 }
 
 - (void)PomodoroTimeStarted:(NSNotification *)note
 {
     EggTimer *egg = (EggTimer *)[note object];
     _timeEstimated = (double)egg.timeEstimated;
-    if(egg.type == TimerTypeEgg)
-    {
-       // [self.window makeKeyAndOrderFront:nil];
-        
-        //create first quarter
-        [self createQuarterForSequence:@"egg_sequences/3_egg_tick_Q1"];
-        animationView.animationTag = 1001;
-        [animationView start];
+    if (egg.type == TimerTypeEgg) {
+        if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
+            [hatchSound1 performSelectorInBackground:@selector(play) withObject:nil];
     }
 }
 
@@ -408,11 +295,11 @@
         [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/10_egg_hatch"]];
         [arr addObjectsFromArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"egg_sequences/11_egg_out"]];
 
-        [animationView stop];
-        animationView.animationTag = -1;
-        animationView.frames = arr;
-        animationView.frameRate = 30.0f;
-        [animationView start];
+        AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
+        
+        if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hideMonitorAnimation"])
+            [appDelegate.windUpSound performSelectorInBackground:@selector(play) withObject:nil];
+
         [self mouseExited:nil];
     }
     
@@ -432,7 +319,6 @@
     EggTimer *pomo = (EggTimer *)[note object];
     if(pomo.type == TimerTypeEgg)
     {
-        [animationView stop];
         [self.window close];
     }
     
@@ -443,8 +329,6 @@
 
 - (void)pomodoroPaused:(NSNotification *)note
 {
-    [animationView pause];
-    
     [stopButton setAttributedTitle:resumeString];
     stopButton.image = [NSImage imageNamed:@"button-resume"];
     stopButton.alternateImage = [NSImage imageNamed:@"button-resume-down"];
@@ -452,8 +336,6 @@
 
 - (void)pomodoroResume:(NSNotificationCenter *)note
 {
-    [animationView resume];
-    
     [stopButton setAttributedTitle:stopString];
     stopButton.image = [NSImage imageNamed:@"button-stop"];
     stopButton.alternateImage = [NSImage imageNamed:@"button-stop-down"];

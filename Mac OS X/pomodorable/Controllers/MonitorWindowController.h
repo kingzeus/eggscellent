@@ -36,7 +36,6 @@
     //non-mouseover view items
     IBOutlet BackgroundView         *normalView;
     IBOutlet NSTextField            *activityNameLabel;
-    IBOutlet NSAnimatedImageView    *animationView;
     
     NSAttributedString              *stopString;
     NSAttributedString              *resumeString;
