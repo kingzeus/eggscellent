@@ -10,28 +10,32 @@
 
 @implementation AVAudioPlayer (Filesystem)
 
-
-+ (AVAudioPlayer *)soundForPreferenceKey:(NSString *)preferenceKey
++ (AVAudioPlayer *)soundForFilename:(NSString *)filename
 {
-    NSString *audioPath = [[NSUserDefaults standardUserDefaults] stringForKey:preferenceKey];
     AVAudioPlayer *returnSound = nil;
     
-    NSString *fileName = [audioPath stringByDeletingPathExtension];
+    NSString *fileName = [filename stringByDeletingPathExtension];
     //most likely is
-    NSString *lul = [[NSBundle mainBundle] pathForResource:fileName ofType:[audioPath pathExtension]];
+    NSString *lul = [[NSBundle mainBundle] pathForResource:fileName ofType:[filename pathExtension]];
     NSData *fileData = [NSData dataWithContentsOfFile:lul];
     returnSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
     
     //someone using custom sounds? how unlikely!
     if(!returnSound)
     {
-        fileData = [NSData dataWithContentsOfFile:audioPath];
+        fileData = [NSData dataWithContentsOfFile:filename];
         returnSound = [[AVAudioPlayer alloc] initWithData:fileData error:NULL];
     }
     
     float volume = [[NSUserDefaults standardUserDefaults] floatForKey:@"audioVolume"] / 100.0f;
     [returnSound setVolume:volume];
     return returnSound;
+}
+
++ (AVAudioPlayer *)soundForPreferenceKey:(NSString *)preferenceKey
+{
+    NSString *audioPath = [[NSUserDefaults standardUserDefaults] stringForKey:preferenceKey];
+    return [self soundForFilename:audioPath];
 }
 
 @end

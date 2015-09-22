@@ -10,6 +10,8 @@
 	<integer>15</integer>
 	<key>playTickSound</key>
 	<false/>
+	<key>playAttentionCheckSound</key>
+	<true/>
 	<key>playCompleteSound</key>
 	<true/>
 	<key>skypeIntegration</key>
