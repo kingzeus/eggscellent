@@ -805,7 +805,6 @@ enum GCDAsyncSocketConfig
 		
 		if (dq)
 		{
-			dispatch_retain(dq);
 			delegateQueue = dq;
 		}
 		
@@ -822,7 +821,6 @@ enum GCDAsyncSocketConfig
 			NSAssert(sq != dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
 			         @"The given socketQueue parameter must not be a concurrent queue.");
 			
-			dispatch_retain(sq);
 			socketQueue = sq;
 		}
 		else
@@ -857,11 +855,7 @@ enum GCDAsyncSocketConfig
 	}
 	
 	delegate = nil;
-	if (delegateQueue)
-		dispatch_release(delegateQueue);
 	delegateQueue = NULL;
-	
-	dispatch_release(socketQueue);
 	socketQueue = NULL;
 	
 	
@@ -945,12 +939,6 @@ enum GCDAsyncSocketConfig
 {
 	dispatch_block_t block = ^{
 		
-		if (delegateQueue)
-			dispatch_release(delegateQueue);
-		
-		if (newDelegateQueue)
-			dispatch_retain(newDelegateQueue);
-		
 		delegateQueue = newDelegateQueue;
 	};
 	
@@ -1003,11 +991,6 @@ enum GCDAsyncSocketConfig
 		
 		delegate = newDelegate;
 		
-		if (delegateQueue)
-			dispatch_release(delegateQueue);
-		
-		if (newDelegateQueue)
-			dispatch_retain(newDelegateQueue);
 		
 		delegateQueue = newDelegateQueue;
 	};
@@ -1445,7 +1428,6 @@ enum GCDAsyncSocketConfig
 			dispatch_source_set_cancel_handler(accept4Source, ^{
 				
 				LogVerbose(@"dispatch_release(accept4Source)");
-				dispatch_release(acceptSource);
 				
 				LogVerbose(@"close(socket4FD)");
 				close(socketFD);
@@ -1478,7 +1460,6 @@ enum GCDAsyncSocketConfig
 			dispatch_source_set_cancel_handler(accept6Source, ^{
 				
 				LogVerbose(@"dispatch_release(accept6Source)");
-				dispatch_release(acceptSource);
 				
 				LogVerbose(@"close(socket6FD)");
 				close(socketFD);
@@ -1617,9 +1598,6 @@ enum GCDAsyncSocketConfig
 					[theDelegate socket:self didAcceptNewSocket:acceptedSocket];
 				}
 				
-				// Release the socket queue returned from the delegate (it was retained by acceptedSocket)
-				if (childSocketQueue)
-					dispatch_release(childSocketQueue);
 				
 				// Release the accepted socket (it should have been retained by the delegate)
 			
@@ -2397,7 +2375,6 @@ enum GCDAsyncSocketConfig
 		dispatch_source_t theConnectTimer = connectTimer;
 		dispatch_source_set_cancel_handler(connectTimer, ^{
 			LogVerbose(@"dispatch_release(connectTimer)");
-			dispatch_release(theConnectTimer);
 		});
 		
 		dispatch_time_t tt = dispatch_time(DISPATCH_TIME_NOW, (timeout * NSEC_PER_SEC));
@@ -3463,7 +3440,6 @@ enum GCDAsyncSocketConfig
 		LogVerbose(@"readCancelBlock");
 		
 		LogVerbose(@"dispatch_release(readSource)");
-		dispatch_release(theReadSource);
 		
 		if (--socketFDRefCount == 0)
 		{
@@ -3477,7 +3453,6 @@ enum GCDAsyncSocketConfig
 		LogVerbose(@"writeCancelBlock");
 		
 		LogVerbose(@"dispatch_release(writeSource)");
-		dispatch_release(theWriteSource);
 		
 		if (--socketFDRefCount == 0)
 		{
@@ -4806,7 +4781,6 @@ enum GCDAsyncSocketConfig
 		dispatch_source_t theReadTimer = readTimer;
 		dispatch_source_set_cancel_handler(readTimer, ^{
 			LogVerbose(@"dispatch_release(readTimer)");
-			dispatch_release(theReadTimer);
 		});
 		
 		dispatch_time_t tt = dispatch_time(DISPATCH_TIME_NOW, (timeout * NSEC_PER_SEC));
@@ -5394,7 +5368,6 @@ enum GCDAsyncSocketConfig
 		dispatch_source_t theWriteTimer = writeTimer;
 		dispatch_source_set_cancel_handler(writeTimer, ^{
 			LogVerbose(@"dispatch_release(writeTimer)");
-			dispatch_release(theWriteTimer);
 		});
 		
 		dispatch_time_t tt = dispatch_time(DISPATCH_TIME_NOW, (timeout * NSEC_PER_SEC));
