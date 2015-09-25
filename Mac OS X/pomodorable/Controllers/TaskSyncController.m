@@ -133,6 +133,7 @@ static TaskSyncController *singleton;
         NSNumber *status = [dictionary objectForKey:@"status"];
         NSString *ID = [dictionary objectForKey:@"ID"];
         NSString *name = [dictionary objectForKey:@"name"];
+        NSString *details = [dictionary objectForKey:@"details"];
         NSNumber *plannedCount = [dictionary objectForKey:kPlannedCountKey];
         plannedCount = @(MAX(1, [plannedCount integerValue]));
         
@@ -146,6 +147,7 @@ static TaskSyncController *singleton;
                                                                   inManagedObjectContext:self.pmoc];
             newActivity.source = [NSNumber numberWithInteger:source];
             newActivity.name = name;
+            newActivity.details = details;
             newActivity.sourceID = ID;
             newActivity.plannedCount = plannedCount;
             [newActivity secretSetCompleted:[status boolValue] ? [NSDate date] : nil];
@@ -177,6 +179,7 @@ static TaskSyncController *singleton;
                                nil];
             
             existingActivity.name = name;
+            existingActivity.details = details;
             existingActivity.plannedCount = @(MAX([existingActivity.plannedCount integerValue], [plannedCount integerValue]));
             [existingActivity secretSetRemoved:[NSNumber numberWithBool:NO]];
             
