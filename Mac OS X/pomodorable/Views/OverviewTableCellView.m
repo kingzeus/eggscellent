@@ -29,6 +29,11 @@
                                                  name:NSControlTextDidEndEditingNotification 
                                                object:self.textField];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notesDidEndEditing:)
+                                                 name:NSControlTextDidEndEditingNotification
+                                               object:self.notesField];
+    
     self.menu = [[NSMenu alloc] initWithTitle:@""];
     //completeItem = [[NSMenuItem alloc] initWithTitle:@"mark as complete" action:@selector(toggleCompleteActivity:) keyEquivalent:@""];
     //[self.menu addItem:completeItem];
@@ -141,6 +146,7 @@
     {
         
         [self.textField setEditable:YES];
+        [self.notesField setEditable:YES];
         
         //change frame of selection box
         CGRect r = coverupView.frame;
@@ -155,7 +161,8 @@
     }
     else
     {
-        [self.textField setEditable:NO];    
+        [self.textField setEditable:NO];
+        [self.notesField setEditable:NO];
         
         //hide selector box
         editContainerView.hidden = YES;
@@ -286,6 +293,17 @@
     
     if(!a.sourceID)
        [[TaskSyncController currentController] saveNewActivity:a];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_MODIFIED object:a];
+}
+
+- (void)notesDidEndEditing:(NSNotification *)aNotification
+{
+    Activity *a = (Activity *)self.objectValue;
+    a.details = self.notesField.stringValue;
+    [a save];
+    
+    if(!a.sourceID)
+        [[TaskSyncController currentController] saveNewActivity:a];
     [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_MODIFIED object:a];
 }
 
