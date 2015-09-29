@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4511" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4511"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="OverviewViewController">
@@ -20,7 +19,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView focusRingType="none" id="1">
             <rect key="frame" x="0.0" y="0.0" width="322" height="588"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,7 +90,7 @@ CA
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="footer" id="330"/>
                 </imageView>
-                <searchField focusRingType="none" verticalHuggingPriority="750" id="12" customClass="MSSearchField">
+                <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" id="12" customClass="MSSearchField">
                     <rect key="frame" x="11" y="510" width="299" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" bezelStyle="round" id="13" customClass="MSSearchFieldCell">
@@ -156,15 +155,15 @@ DQ
                         <action selector="startANewPomodoro:" target="-2" id="254"/>
                     </connections>
                 </button>
-                <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" scrollerKnobStyle="light" id="116">
+                <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="70" horizontalPageScroll="10" verticalLineScroll="70" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" scrollerKnobStyle="light" id="116">
                     <rect key="frame" x="1" y="41" width="320" height="463"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="8F0-Vl-Iik">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="463"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView autoresizesSubviews="NO" focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" id="117">
-                                <rect key="frame" x="0.0" y="0.0" width="320.5" height="463"/>
+                            <tableView autoresizesSubviews="NO" focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="70" rowSizeStyle="automatic" viewBased="YES" id="117">
+                                <rect key="frame" x="0.0" y="0.0" width="320.5" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="gridColor" white="0.80000000000000004" alpha="0.0" colorSpace="deviceWhite"/>
@@ -263,7 +262,7 @@ DQ
                                                                 <rect key="frame" x="87" y="15" width="63" height="26"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Internal Distractions" id="591">
-                                                                    <font key="font" size="10" name="LucidaGrande"/>
+                                                                    <font key="font" metaFont="system" size="10"/>
                                                                     <color key="textColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
@@ -272,7 +271,7 @@ DQ
                                                                 <rect key="frame" x="195" y="15" width="63" height="26"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="External Distractions" id="595">
-                                                                    <font key="font" size="10" name="LucidaGrande"/>
+                                                                    <font key="font" metaFont="system" size="10"/>
                                                                     <color key="textColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
@@ -284,10 +283,6 @@ DQ
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="pullOutBackgroundClip" id="604"/>
                                                     </imageView>
-                                                    <customView autoresizesSubviews="NO" focusRingType="none" id="624" customClass="ColorView">
-                                                        <rect key="frame" x="0.0" y="1" width="320" height="32"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    </customView>
                                                     <customView autoresizesSubviews="NO" id="396" customClass="TaskRibbonView">
                                                         <rect key="frame" x="6" y="18" width="50" height="52"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -304,16 +299,31 @@ DQ
                                                         </connections>
                                                     </button>
                                                     <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="133">
-                                                        <rect key="frame" x="61" y="11" width="242" height="48"/>
+                                                        <rect key="frame" x="62" y="41" width="242" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" focusRingType="none" title="build a robot to take over the world that doesn't require weapons grade plutonium" id="134">
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" focusRingType="none" title="build a robot to take over the world that doesn't require weapons grade plutonium" id="134">
                                                             <font key="font" metaFont="cellTitle"/>
                                                             <color key="textColor" white="0.40000000000000002" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
                                                             <binding destination="125" name="value" keyPath="objectValue.name" id="311"/>
+                                                            <binding destination="125" name="toolTip" keyPath="objectValue.name" id="313"/>
                                                             <outlet property="delegate" destination="125" id="402"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField focusRingType="none" verticalHuggingPriority="750" id="4Ct-YA-Pz2">
+                                                        <rect key="frame" x="62" y="21" width="242" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="fdsfdsfdsfsd" id="3Rx-d9-2k5">
+                                                            <font key="font" size="11" name=".HelveticaNeueDeskInterface-Regular"/>
+                                                            <color key="textColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="125" name="value" keyPath="objectValue.details" id="312"/>
+                                                            <binding destination="125" name="toolTip" keyPath="objectValue.details" id="314"/>
+                                                            <outlet property="delegate" destination="125" id="fhN-t3-6TY"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -323,11 +333,16 @@ DQ
                                                     <outlet property="decreasePomodoroCountButton" destination="382" id="621"/>
                                                     <outlet property="editContainerView" destination="361" id="367"/>
                                                     <outlet property="increasePomodoroCountButton" destination="380" id="622"/>
+                                                    <outlet property="notesField" destination="4Ct-YA-Pz2" id="UF7-mr-Xrl"/>
                                                     <outlet property="pomodoroCounterView" destination="366" id="384"/>
                                                     <outlet property="ribbonView" destination="396" id="397"/>
                                                     <outlet property="textField" destination="133" id="413"/>
                                                 </connections>
                                             </tableCellView>
+                                            <customView autoresizesSubviews="NO" focusRingType="none" id="624" customClass="ColorView">
+                                                <rect key="frame" x="0.0" y="70" width="320.5" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            </customView>
                                         </prototypeCellViews>
                                         <connections>
                                             <binding destination="26" name="value" keyPath="arrangedObjects" id="181"/>
@@ -342,11 +357,11 @@ DQ
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" id="118">
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="118">
                         <rect key="frame" x="-100" y="-100" width="318" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" id="120">
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="120">
                         <rect key="frame" x="-100" y="-100" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
