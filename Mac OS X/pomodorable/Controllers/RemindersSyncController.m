@@ -138,6 +138,7 @@
         BOOL completed = (activity.completed || [activity.removed boolValue]);
         reminder.completed = completed;
         reminder.title = activity.name;
+        reminder.notes = activity.details;
         
         lameSyncActivityHack = YES;
         [_mainStore saveReminder:reminder commit:YES error:NULL];
