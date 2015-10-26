@@ -1,6 +1,6 @@
-eggscellent
+Eggscellent
 ===========
 
-Add Omnifucos 2 sync support, Downlad at <https://github.com/devon/eggscellent/releases>
+Add OmniFocus 2 sync support, Downlad at <https://github.com/devon/eggscellent/releases>
 
-You need OmniFocus pro for task integration. Because eggscellent use apple script to support OmniFocus pro.
+You need OmniFocus Pro for task integration because Eggscellent uses AppleScript to support OmniFocus Pro.
