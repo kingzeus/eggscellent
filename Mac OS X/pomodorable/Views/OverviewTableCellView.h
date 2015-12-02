@@ -45,6 +45,7 @@
 @property (nonatomic, weak) NSImageView *backgroundClip;
 @property (nonatomic, weak) NSView      *editContainerView;
 @property (nonatomic, weak) NSTableView *tableView;
+@property (assign) IBOutlet NSTextField    *notesField;
 
 + (CGFloat)heightForTitle:(NSString *)title selected:(BOOL)selected;
 + (CGFloat)heightOfTitle:(NSString *)title;
