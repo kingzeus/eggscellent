@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "MASPreferencesViewController.h"
 
+FOUNDATION_EXPORT NSString *kPlayAttentionCheckSound;
+
 @interface NotificationsPreferencesViewController : NSViewController <MASPreferencesViewController, NSSoundDelegate>
 {
     IBOutlet NSPopUpButton *tickSelection;
@@ -25,6 +27,9 @@
 }
 @property (nonatomic, unsafe_unretained) NSWindow *window;
 
+@property (weak) IBOutlet NSButton *attentionCheckButton;
+
+- (IBAction)actionAttentionCheckToggle:(NSButton *)sender;
 - (IBAction)newTickSoundSelected:(id)sender;
 - (IBAction)newCompletedSoundSelected:(id)sender;
 - (IBAction)volumeChange:(id)sender;

@@ -10,11 +10,14 @@
 #import "AppDelegate.h"
 #import "EggTimer.h"
 
+NSString *kPlayAttentionCheckSound = @"playAttentionCheckSound";
+
 @interface NotificationsPreferencesViewController (private)
 - (void)populatePopUpButton:(NSPopUpButton *)popUpButton withList:(NSArray *)list forPreference:(NSString *)preferenceKey;
 - (void)populatePopUpButtons;
 - (NSString *)audioPathForFiles:(NSArray *)files withPopUpButton:(NSPopUpButton *)popUpButton;
 - (NSString *)chooseCustomSoundForControl:(id)sender;
+
 @end
 
 @implementation NotificationsPreferencesViewController
@@ -40,6 +43,8 @@
 {
     [super awakeFromNib];
     [self populatePopUpButtons];
+    
+    self.attentionCheckButton.state = [[NSUserDefaults standardUserDefaults] boolForKey:kPlayAttentionCheckSound];
 }
 
 
@@ -220,6 +225,11 @@
 }
 
 #pragma mark - IBActions
+
+- (void)actionAttentionCheckToggle:(NSButton *)sender
+{
+    [[NSUserDefaults standardUserDefaults] setBool:sender.state forKey:kPlayAttentionCheckSound];
+}
 
 - (IBAction)newCompletedSoundSelected:(id)sender
 {

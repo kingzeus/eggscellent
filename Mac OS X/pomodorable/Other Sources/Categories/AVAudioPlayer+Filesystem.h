@@ -10,6 +10,7 @@
 
 @interface AVAudioPlayer (Filesystem)
 
++ (AVAudioPlayer *)soundForFilename:(NSString *)filename;
 + (AVAudioPlayer *)soundForPreferenceKey:(NSString *)preferenceKey;
 
 @end

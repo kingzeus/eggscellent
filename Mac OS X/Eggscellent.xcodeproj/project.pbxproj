@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		345E461A1A6DBE6A001F1454 /* clock.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 345E46181A6DBE6A001F1454 /* clock.m4a */; };
+		345E461B1A6DBE6A001F1454 /* gong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 345E46191A6DBE6A001F1454 /* gong.m4a */; };
 		3D0FDCE916ECED5800815B2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B401465F38500BFD7B2 /* main.m */; };
 		3D0FDCEA16ECED5800815B2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B471465F38500BFD7B2 /* AppDelegate.m */; };
 		3D0FDCEB16ECED5800815B2C /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = F48A5B931466F68400BFD7B2 /* PanelController.m */; };
@@ -233,7 +235,6 @@
 		3D0FDDCF16ECED5800815B2C /* egg_count-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4116D408C200287DA8 /* egg_count-7@2x.png */; };
 		3D0FDDD016ECED5800815B2C /* egg_count-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4216D408C200287DA8 /* egg_count-8.png */; };
 		3D0FDDD116ECED5800815B2C /* egg_count-8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E4316D408C200287DA8 /* egg_count-8@2x.png */; };
-		3D0FDDD216ECED5800815B2C /* egg_sequences in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4716D67858004604B6 /* egg_sequences */; };
 		3D0FDDD316ECED5800815B2C /* ribbonComplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */; };
 		3D0FDDD416ECED5800815B2C /* ribbonComplete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */; };
 		3D0FDDD516ECED5800815B2C /* 2_egg_wind.aif in Resources */ = {isa = PBXBuildFile; fileRef = 3D47206116D99651009204E2 /* 2_egg_wind.aif */; };
@@ -289,7 +290,6 @@
 		3D969680171891CE00A0CE95 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */; };
 		3D969681171891DE00A0CE95 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967D171891CD00A0CE95 /* IOBluetooth.framework */; };
 		3D969682171891DE00A0CE95 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */; };
-		3D9CAB4816D67858004604B6 /* egg_sequences in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4716D67858004604B6 /* egg_sequences */; };
 		3D9CAB4A16D6B5E0004604B6 /* ribbonComplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */; };
 		3D9CAB4C16D6B5E7004604B6 /* ribbonComplete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */; };
 		3DAA1E4416D408C200287DA8 /* egg_count-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAA1E3416D408C100287DA8 /* egg_count-1.png */; };
@@ -592,6 +592,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		345E46181A6DBE6A001F1454 /* clock.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = clock.m4a; sourceTree = "<group>"; };
+		345E46191A6DBE6A001F1454 /* gong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gong.m4a; sourceTree = "<group>"; };
 		3D0FDDE316ECED5800815B2C /* Eggscellent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eggscellent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1564E115697BC100D70EBB /* ThingsSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingsSyncController.h; sourceTree = "<group>"; };
 		3D1564E215697BC100D70EBB /* ThingsSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingsSyncController.m; sourceTree = "<group>"; };
@@ -636,7 +638,6 @@
 		3D91275915751A710016661F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3D96967D171891CD00A0CE95 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		3D96967E171891CE00A0CE95 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = SDKROOT; };
-		3D9CAB4716D67858004604B6 /* egg_sequences */ = {isa = PBXFileReference; lastKnownFileType = folder; name = egg_sequences; path = Resources/egg_sequences; sourceTree = "<group>"; };
 		3D9CAB4916D6B5E0004604B6 /* ribbonComplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbonComplete.png; sourceTree = "<group>"; };
 		3D9CAB4B16D6B5E7004604B6 /* ribbonComplete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ribbonComplete@2x.png"; path = "Resources/ribbons/ribbonComplete@2x.png"; sourceTree = "<group>"; };
 		3DAA1E3416D408C100287DA8 /* egg_count-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_count-1.png"; sourceTree = "<group>"; };
@@ -1018,6 +1019,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		345E46171A6DBE6A001F1454 /* attention */ = {
+			isa = PBXGroup;
+			children = (
+				345E46181A6DBE6A001F1454 /* clock.m4a */,
+				345E46191A6DBE6A001F1454 /* gong.m4a */,
+			);
+			name = attention;
+			path = Resources/Audio/attention;
+			sourceTree = "<group>";
+		};
 		3D1564E515697BCF00D70EBB /* Things */ = {
 			isa = PBXGroup;
 			children = (
@@ -1247,6 +1258,7 @@
 		F4104BBC147C147B0077D272 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				345E46171A6DBE6A001F1454 /* attention */,
 				3D47206016D9963E009204E2 /* egg */,
 				F45A4BD0152EAE910010AB45 /* Audio.plist */,
 				F45A4BD3152F70BA0010AB45 /* completions */,
@@ -1569,7 +1581,6 @@
 		F48A5B3B1465F38500BFD7B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3D9CAB4716D67858004604B6 /* egg_sequences */,
 				3D8EA55315D5A7E100A07915 /* Fonts */,
 				F4E7E7F4147CCB7F00815B66 /* AppleScripts */,
 				F4104BBC147C147B0077D272 /* Audio */,
@@ -2182,7 +2193,6 @@
 				3D0FDDCF16ECED5800815B2C /* egg_count-7@2x.png in Resources */,
 				3D0FDDD016ECED5800815B2C /* egg_count-8.png in Resources */,
 				3D0FDDD116ECED5800815B2C /* egg_count-8@2x.png in Resources */,
-				3D0FDDD216ECED5800815B2C /* egg_sequences in Resources */,
 				3D0FDDD316ECED5800815B2C /* ribbonComplete.png in Resources */,
 				3D0FDDD416ECED5800815B2C /* ribbonComplete@2x.png in Resources */,
 				3D0FDDD516ECED5800815B2C /* 2_egg_wind.aif in Resources */,
@@ -2265,6 +2275,7 @@
 				F43937F614AA8EEA00FA1244 /* footer.png in Resources */,
 				F43937F914AA8F7C00FA1244 /* button-add-down.png in Resources */,
 				F43937FA14AA8F7C00FA1244 /* button-add.png in Resources */,
+				345E461A1A6DBE6A001F1454 /* clock.m4a in Resources */,
 				F43937FD14AA909300FA1244 /* prefs-down.png in Resources */,
 				F43937FE14AA909300FA1244 /* prefs.png in Resources */,
 				F439380114AA913500FA1244 /* button-stop-down.png in Resources */,
@@ -2372,7 +2383,6 @@
 				3DAA1E5116D408C200287DA8 /* egg_count-7@2x.png in Resources */,
 				3DAA1E5216D408C200287DA8 /* egg_count-8.png in Resources */,
 				3DAA1E5316D408C200287DA8 /* egg_count-8@2x.png in Resources */,
-				3D9CAB4816D67858004604B6 /* egg_sequences in Resources */,
 				3D9CAB4A16D6B5E0004604B6 /* ribbonComplete.png in Resources */,
 				3D9CAB4C16D6B5E7004604B6 /* ribbonComplete@2x.png in Resources */,
 				3D47206616D99651009204E2 /* 2_egg_wind.aif in Resources */,
@@ -2385,6 +2395,7 @@
 				3DE68BCA16F2203200500E40 /* list.png in Resources */,
 				3DF3DCAA1705492300F865E9 /* stats.png in Resources */,
 				3DF3DCAC1705492300F865E9 /* stats@2x.png in Resources */,
+				345E461B1A6DBE6A001F1454 /* gong.m4a in Resources */,
 				3D53FD27171A5E0000303BD4 /* button-next-down.png in Resources */,
 				3D53FD29171A5E0000303BD4 /* button-next-down@2x.png in Resources */,
 				3D53FD2B171A5E0000303BD4 /* button-next.png in Resources */,
