@@ -101,8 +101,9 @@
                       NSString *ID = reminder.calendarItemExternalIdentifier;
                       NSString *name = reminder.title;
                       NSNumber *status = [NSNumber numberWithBool:reminder.completed];
+                      NSString *details = reminder.notes;
                       
-                      NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name", nil];
+                      NSDictionary *syncDictionary = [NSDictionary dictionaryWithObjectsAndKeys:ID,@"ID",status,@"status",name,@"name",details,@"details", nil];
                       
                       [self syncWithDictionary:syncDictionary];
                   }
